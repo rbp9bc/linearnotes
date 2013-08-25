@@ -3,6 +3,9 @@
 \usepackage{setspace}
 \usepackage{multicol}
 \usepackage{amsthm}
+\usepackage{tikz}
+\newcommand*\circled[1]{\tikz[baseline=(char.base)]{
+            \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 \pagestyle{empty}
 
 \theoremstyle{defn}
@@ -16,34 +19,73 @@
 
 
 
-\begin{defn}\textup{A Linear Equations is the variables $x_1,x_2...x_n$ is an equation that can be written in the form $a_1x_1+...+a_nx_n = b$ where $a_1 ... a_n$ are real coefficient and $b$ is a real number(and known)} \end{defn}
-\begin{defn}\textup{A System of Linear Equations $a_{11}x_1+a_{12}x_2+...+a_{1n}x_n = b_1$ $a_{21}x_1+a_{22}x_2+...+a_{2n}x_n = b_2$ $a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n = b_m$ m number of equations, n number unknowns (standard form) (first index row number, second index col number)}\end{defn}
+\begin{defn}\textup{A Linear Equations is the variables $x_1,x_2...x_n$ is an equation that can be written in the form $a_1x_1+a_2x_2+...+a_nx_n = b$ where $a_1,a_2, ..., a_n$ are real coefficient and $b$ is a real number(and known)} \end{defn}
+\begin{defn}\textup{A System of Linear Equations
+$\left\{ \begin{array}{c}
+a_{11}x_1+a_{12}x_2+...+a_{1n}x_n = b_1\\
+a_{21}x_1+a_{22}x_2+...+a_{2n}x_n = b_2\\
+\vdots\\
+a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n = b_m
+\end{array} \right.$ m number of equations, n number of unknowns (standard form) (first index row number, second index col number)}\end{defn}
 \begin{defn}\textup{A solution of the system is a list ($s_1,s_2,...,s_n$) of numbers that makes each equation a true statment when the values are substituted for $x_1,x_2,...,x_n$}\end{defn}
 \begin{defn}\textup{Solution Set is the set of all possible solutions}\end{defn}
 
-\subsection{Geometric Interpretations}
-Ex. Find the Solution set of the system \\
-(a) $x_1 - x_2= 5$ \\
-     $2x_1 + x_2 = 7$
+Geometric Interpretations
+Example) Find the Solution set of the system \\
+(a) $\left\{ \begin{array}{rcl}
+x_1 - x_2 & = & 5 \\
+2x_1 + x_2 & = & 7
+\end{array} \right.$\\
+(b) $\left\{ \begin{array}{rcl}
+x_1 - 2x_2&=& 4 \\
+-2x_1 + 4x_2 &=& -8
+\end{array} \right.$\\
+(c) $\left\{ \begin{array}{rcl}
+x_1+3x_2&=&1\\
+2x_1+6x_2&=&5
+\end{array} \right.$
+
 
 \begin{defn}\textup{A linear system is consistant if it has either one solution or infinitely many solutions}\end{defn}
 
 \begin{defn}\textup{Matrix of Coefficients} 
-$\left| \begin{array}{cccc}
+$\left[ \begin{array}{cccc}
 a_{11} & a_{12} & \ldots & a_{1n}\\
 a_{11} & a_{12} & \ldots & a_{1n}\\
 \vdots &\vdots&\ddots& \vdots\\
 a_{11} & a_{12} & \ldots & a_{1n}\\
-\end{array} \right|$ \end{defn}
+\end{array} \right]$ \end{defn}
 
 
 \begin{defn}\textup{Augmented Matrix of the System}
-$\left| \begin{array}{cccc|c}
+$\left[ \begin{array}{cccc|c}
 a_{11} & a_{12} & \ldots & a_{1n} & b_1\\
-a_{11} & a_{12} & \ldots & a_{1n} & b_1\\
+a_{21} & a_{22} & \ldots & a_{2n} & b_2\\
 \vdots &\vdots&\ddots& \vdots &\vdots\\
-a_{11} & a_{12} & \ldots & a_{1n} & b_1\\
-\end{array} \right|$ \end{defn}
+a_{m1} & a_{m2} & \ldots & a_{mn} & b_m\\
+\end{array}\right]$ \end{defn}
 
 
+\section{Row Reduction and Echelon Forms}
+\begin{defn}\textup{A leading  of a row in a matrix is the left most non-zero entry} \end{defn}
+Example) $\left[ \begin{array}{cccccc} 0 & 0 & \circled{7} & 3 & 4 & 1\\ \circled{2} & 4 & 0 &0 &0 &0 \\ 0 &0 &0 &0 &\circled{-2} &0 \end{array} \right] $
+
+\begin{defn}\textup{A rectangular matrix is in echelon form if it has the following three properties:
+\begin{enumerate}
+\item All non-zero rows are above any zero rows.
+\item Each leading entry of a row is in a column to the right of the leading entry above it.
+\item All entries in a column below a leading entry are zero.
+\end{enumerate}} \end{defn}
+
+\section{Vector Equations}
+\begin{defn}
+\textup{Vectors\\
+In $R^2, \vec{v} = \left[\begin{array}{c} v_1 \\ v_2 \end{array}\right]$, in $R^3, \vec{v}=\left[\begin{array}{c} v_1 \\ v_2 \\v_3\end{array}\right]$, in $R^n, \vec{v} =\left[\begin{array}{c} v_1 \\ v_2 \\ \vdots \\ v_n\end{array}\right]$}\end{defn}
+\begin{defn}
+\textup{
+Alebraic Operations of Vectors.\\
+$\vec{u}=\left[\begin{array}{c} u_1\\u_2\\u_3 \end{array}\right]$
+$\vec{v}=\left[\begin{array}{c} v_1\\v_2\\v_3 \end{array}\right]$\\
+Addition:
+}\end{defn}
 \end{document}
