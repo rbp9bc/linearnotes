@@ -84,8 +84,41 @@ In $R^2, \vec{v} = \left[\begin{array}{c} v_1 \\ v_2 \end{array}\right]$, in $R^
 \begin{defn}
 \textup{
 Alebraic Operations of Vectors.\\
-$\vec{u}=\left[\begin{array}{c} u_1\\u_2\\u_3 \end{array}\right]$
-$\vec{v}=\left[\begin{array}{c} v_1\\v_2\\v_3 \end{array}\right]$\\
-Addition:
+$\vec{u}=\left[\begin{array}{c} u_1\\u_2\\\vdots\\u_n \end{array}\right]$
+$\vec{v}=\left[\begin{array}{c} v_1\\v_2\\\vdots\\v_n \end{array}\right]$\\
+Addition: $\vec{u}+\vec{v}= \left[\begin{array}{c} u_1+v_1\\u_2+v_2\\\vdots\\u_n+v_n \end{array}\right]$\\
+Multipy by Scaler: $c\in R c\quad\vec{v}=\left[\begin{array}{c} cv_1\\cv_2\\\vdots\\cv_n \end{array}\right]$
 }\end{defn}
+
+\begin{defn}
+\textup{
+Linear Combination of Vectors\\
+$\vec{v_1},\vec{v_2},...,\vec{v_p}$ vectors in $R^n$\\
+$c_1,c_2,...,c_n$ scalers\\
+Linear Combination: $c_1\vec{v_1}+c_2\vec{v_2}+...+c_n\vec{v_n}$
+}\end{defn}
+
+\begin{defn}
+\textup{
+Vector Form of a System of Linear Equations
+}\end{defn}
+Example)\\
+Standard Form: $\left\{ \begin{array}{ccccccc}
+2x_1&+&3x_2&-&4x_3&=&5\\
+x_1& & &+& 2x_3&=&1\\
+ & & x_2 & - &x_3&=&4
+\end{array}
+\right.$\\
+Augmented Matrix:
+$\left[ \begin{array}{ccc|c}
+2&3&-4&5\\
+1&0&2&1\\
+0&1&-1&4
+\end{array}
+\right]$\\
+Vector Form:
+$\left[ \begin{array}{c} 2\\1\\0 \end{array} \right]x_1+
+\left[ \begin{array}{c} 3\\0\\1 \end{array} \right]x_2+
+\left[ \begin{array}{c} -4\\2\\-1 \end{array} \right]x_3=
+\left[ \begin{array}{c} 5\\1\\4 \end{array} \right]$
 \end{document}
