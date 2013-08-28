@@ -53,9 +53,9 @@ x_1+3x_2&=&1\\
 \begin{defn}\textup{Matrix of Coefficients} 
 $\left[ \begin{array}{cccc}
 a_{11} & a_{12} & \ldots & a_{1n}\\
-a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} & \ldots & a_{2n}\\
 \vdots &\vdots&\ddots& \vdots\\
-a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{m1} & a_{m2} & \ldots & a_{mn}\\
 \end{array} \right]$ \end{defn}
 
 
@@ -89,7 +89,7 @@ Alebraic Operations of Vectors.\\
 $\vec{u}=\left[\begin{array}{c} u_1\\u_2\\\vdots\\u_n \end{array}\right]$
 $\vec{v}=\left[\begin{array}{c} v_1\\v_2\\\vdots\\v_n \end{array}\right]$\\
 Addition: $\vec{u}+\vec{v}= \left[\begin{array}{c} u_1+v_1\\u_2+v_2\\\vdots\\u_n+v_n \end{array}\right]$\\
-Multipy by Scaler: $c\in R c\quad\vec{v}=\left[\begin{array}{c} cv_1\\cv_2\\\vdots\\cv_n \end{array}\right]$
+Multipy by Scaler: $c\in R\quad c\vec{v}=\left[\begin{array}{c} cv_1\\cv_2\\\vdots\\cv_n \end{array}\right]$
 }\end{defn}
 
 \begin{defn}
@@ -102,9 +102,21 @@ Linear Combination: $c_1\vec{v_1}+c_2\vec{v_2}+...+c_n\vec{v_n}$
 
 \begin{defn}
 \textup{
-Vector Form of a System of Linear Equations
+Vector Form of a System of Linear Equations\\
+$\begin{array}{ccccccccc}
+a_{11}x_1&+&a_{12}x_2&+&...&+&a_{1n}x_n &=&b_1\\
+a_{21}x_1&+&a_{22}x_2&+&...&+&a_{2n}x_n &=&b_2\\
+\vdots&&\vdots\\
+a_{m1}x_1&+&a_{m2}x_2&+&...&+&a_{mn}x_n&=& b_m\\
+\vec{a_1}&&\vec{a_2}&&&&\vec{a_n}&&\vec{b_n}\\
+\end{array}$\\
+Short Vector Form: $\vec{a_1}x_1+\vec{a_2}x_2+...+\vec{a_n}x_n=\vec{b_n}$\\
+Long Vector Form: $\left[\begin{array}{c} a_{11}\\a_{21}\\\vdots\\a_{m1}\end{array}\right]x_1
++\left[\begin{array}{c} a_{12}\\a_{22}\\\vdots\\a_{m2}\end{array}\right]x_2+...
++\left[\begin{array}{c} a_{1n}\\a_{2n}\\\vdots\\a_{mn}\end{array}\right]x_n
+=\left[\begin{array}{c} b_{1}\\b_{2}\\\vdots\\b_{m}\end{array}\right]$
 }\end{defn}
-\begin{expl}
+\begin{expl}\-\\
 \textup{
 Standard Form: $\left\{ \begin{array}{ccccccc}
 2x_1&+&3x_2&-&4x_3&=&5\\
@@ -125,4 +137,40 @@ $\left[ \begin{array}{c} 2\\1\\0 \end{array} \right]x_1+
 \left[ \begin{array}{c} -4\\2\\-1 \end{array} \right]x_3=
 \left[ \begin{array}{c} 5\\1\\4 \end{array} \right]$
 }\end{expl}
+\begin{defn}\-\\
+\textup{
+If $\vec{v_1},\vec{v_2},...,\vec{v_p}$ are vectors in $R^N$ then the set of all linear combonations of $\vec{v_1},\vec{v_2},...,\vec{v_p}$ is denoted by Span\{$\vec{v_1},\vec{v_2},...,\vec{v_p}$\} and is called a subset of $R^N$ spanned (or generated) by $\vec{v_1},\vec{v_2},...,\vec{v_p}$.
+}\end{defn}
+\begin{expl}\-\\
+\textup{
+for $R^3$, describe Span\{$\left[\begin{array}{c}1\\0\\0\end{array}\right]$,$\left[\begin{array}{c}0\\0\\1\end{array}\right]$\}\\
+All Linear Combontations we get the $x_1x_3$-plane\\
+}\end{expl}
+Remark: A system of linear equations is consistant if $\vec{b}$ is in Span\{$\vec{a_1},\vec{a_2},...,\vec{a_n}$ \}\\
+\begin{expl}\-\\
+\textup{
+Determine if $\vec{b} = \left[\begin{array}{c}11\\-5\\9\end{array}\right]$ is in the Span\{$\left[\begin{array}{c}1\\0\\1\end{array}\right],
+\left[\begin{array}{c}-2\\1\\2\end{array}\right],
+\left[\begin{array}{c}-6\\7\\5\end{array}\right]$ \}\\
+}\end{expl}
+
+\section{The Matrix Equation $A\vec{x}=\vec{b}$}
+Standard Form: 
+$\begin{array}{ccccccccc}
+a_{11}x_1&+&a_{12}x_2&+&...&+&a_{1n}x_n &=&b_1\\
+a_{21}x_1&+&a_{22}x_2&+&...&+&a_{2n}x_n &=&b_2\\
+\vdots&&\vdots&&&&\vdots&&\vdots\\
+a_{m1}x_1&+&a_{m2}x_2&+&...&+&a_{mn}x_n&=& b_m\\
+\end{array}$\\
+\-\\ Matrix Form: 
+$\left[ \begin{array}{cccc}
+a_{11} & a_{12} & \ldots & a_{1n}\\
+a_{21} & a_{22} & \ldots & a_{2n}\\
+\vdots &\vdots&\ddots& \vdots\\
+a_{m1} & a_{m2} & \ldots & a_{mn}\\
+\end{array} \right]
+\left[\begin{array}{c}x_1\\x_2\\\vdots\\x_m\end{array}\right]=
+\left[\begin{array}{c}b_1\\b_2\\\vdots\\b_m\end{array}\right]$\\
+Theorem: The system $A\vec{x}=\vec{b}$ has a solution Iff $\vec{b}$ is a linear combination of $A, \vec{b} \in$ Span\{column vectors of $A$\}
+
 \end{document}
