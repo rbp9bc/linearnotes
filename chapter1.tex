@@ -152,8 +152,39 @@ Remark: A system of linear equations is consistant if $\vec{b}$ is in Span\{$\ve
 Determine if $\vec{b} = \left[\begin{array}{c}11\\-5\\9\end{array}\right]$ is in the Span\{$\left[\begin{array}{c}1\\0\\1\end{array}\right],
 \left[\begin{array}{c}-2\\1\\2\end{array}\right],
 \left[\begin{array}{c}-6\\7\\5\end{array}\right]$ \}\\
+$\left[\begin{array}{c}1\\0\\1\end{array}\right]x_1+
+\left[\begin{array}{c}-2\\1\\2\end{array}\right]x_2+
+\left[\begin{array}{c}-6\\7\\5\end{array}\right]x_3=
+\left[\begin{array}{c}11\\-5\\9\end{array}\right]$\\
+$\left[\begin{array}{ccc|c}1&-2&-6&11\\0&1&7&-5\\1&2&5&9\end{array}\right]RowOperations\rightarrow\left[\begin{array}{ccc|c}1&-2&-6&11\\0&1&7&-5\\0&0&-17&-18\end{array}\right]$\\
+Yes it is in Span because it is consistent!
 }\end{expl}
-
+Remark:\\
+1) If the question is determine wheter the system is consistent or not. Then usually it is enought to get Echelon Form of the Augmented Matrix.\\
+2) If the question is to solve the system, then we need Reduced Echelon Form of the Augmented Matrix
+\begin{expl}\-\\
+\textup{
+$\begin{array}{ccc}
+x_1+x_2-2x_3&=&5\\
+x_1-x_2+x_3&=&7\\
+5x_1-x_2-x_3&=&31
+\end{array}=
+\left[\begin{array}{ccc|c}1&1&-2&5\\1&-1&1&7\\5&-1&-1&31\end{array}\right]Row Operations \rightarrow\\
+\left[\begin{array}{ccc|c}1&1&-2&5\\0&1&-\frac{3}{2}&-1\\0&0&0&0\end{array}\right]
+\Rightarrow
+\begin{array}{ccc}
+x_1&=&-x_2+2x_3+5\\
+x_2&=&\frac{3}{2}x_3-1\\
+x_3&=&Parameter
+\end{array}\\ \textup{Wrong Because $-x_2$ is not a parameter. If it's a pivot column, it can't be a parameter.}\\RowOperations\rightarrow
+\left[\begin{array}{ccc|c}1&0&-\frac{1}{2}&6\\0&1&-\frac{3}{2}&-1\\0&0&0&0\end{array}\right]\Rightarrow
+\begin{array}{ccc}
+x_1&=&\frac{1}{2}x_3+6\\
+x_2&=&\frac{3}{2}x_3-1\\
+x_3&=&Parameter
+\end{array}$\\
+Remember: Echelon Form of a matrix is not unique. Reduced Echelon Form IS unique.
+}\end{expl}
 \section{The Matrix Equation $A\vec{x}=\vec{b}$}
 Standard Form: 
 $\begin{array}{ccccccccc}
@@ -163,14 +194,46 @@ a_{21}x_1&+&a_{22}x_2&+&...&+&a_{2n}x_n &=&b_2\\
 a_{m1}x_1&+&a_{m2}x_2&+&...&+&a_{mn}x_n&=& b_m\\
 \end{array}$\\
 \-\\ Matrix Form: 
-$\left[ \begin{array}{cccc}
+$\underbrace{\left[ \begin{array}{cccc}
 a_{11} & a_{12} & \ldots & a_{1n}\\
 a_{21} & a_{22} & \ldots & a_{2n}\\
 \vdots &\vdots&\ddots& \vdots\\
 a_{m1} & a_{m2} & \ldots & a_{mn}\\
-\end{array} \right]
-\left[\begin{array}{c}x_1\\x_2\\\vdots\\x_m\end{array}\right]=
-\left[\begin{array}{c}b_1\\b_2\\\vdots\\b_m\end{array}\right]$\\
+\end{array} \right]}_{A}
+\underbrace{\left[\begin{array}{c}x_1\\x_2\\\vdots\\x_m\end{array}\right]}_{\vec{x}}=
+\underbrace{\left[\begin{array}{c}b_1\\b_2\\\vdots\\b_m\end{array}\right]}_{\vec{b}}$\\
 Theorem: The system $A\vec{x}=\vec{b}$ has a solution Iff $\vec{b}$ is a linear combination of $A, \vec{b} \in$ Span\{column vectors of $A$\}
 
+\begin{expl}
+\textup{
+$A = \left[\begin{array}{ccc}3&5&-1\\2&0&4\\0&1&2\end{array}\right] \vec{b}=\left[\begin{array}{c}4\\2\\-1\end{array}\right]$\\
+Standard Form: $\left\{\begin{array}{ccccccc}
+3x_1&+&5x_2&-&1x_3&=&4\\
+2x_1&&&+&4x_3&=&2\\
+&&1x_2&+&2x_3&=&-1
+\end{array}
+ \right.$\\
+Matrix Form: $\left[\begin{array}{ccc}3&4&-1\\2&0&4\\0&1&2\end{array} \right]\left[\begin{array}{c}x_1\\x_2\\x_3\end{array} \right] = \left[\begin{array}{c}4\\2\\-1\end{array} \right]$\\
+Vector Form: $\left[\begin{array}{c}3\\2\\0\end{array}\right]x_1+\left[\begin{array}{c}5\\0\\1\end{array}\right]x_2+\left[\begin{array}{c}-1\\4\\2\end{array}\right]x_3=\left[\begin{array}{c}4\\2\\-1\end{array}\right]$
+}\end{expl}
+\begin{expl}
+\textup{
+How many rows have pivot positions?\\
+$A = \left[\begin{array}{cccc}1&3&-2&-2\\0&1&-1&5\\-1&-2&1&7\\1&1&0&-6\end{array}\right]$
+$Row Operations \rightarrow \left[\begin{array}{cccc}\circled{1}&3&-2&-2\\0&\circled{1}&-1&5\\0&0&0&\circled{6}\\0&0&0&0\end{array}\right]$\\
+A as above\\ $A\vec{x}=\vec{b}$ Assume system is consistent\\
+$Q_1$: On how many parameters does the solution depend?\\
+Answer: One ($x_3$)\\
+$Q_2$: Is it true that $A\vec{x}=\vec{b}$ has a solution for any $\vec{b} \in R^4$?\\
+Answer: Only if there is a pivot position in each row. - So it's False.
+}\end{expl}
+\begin{expl}
+\textup{
+Do the vectors $\vec{v_1}=\left[\begin{array}{c}1\\3\\4\\-1\end{array}\right] \vec{v_2}=\left[\begin{array}{c}0\\7\\5\\-1\end{array}\right] \vec{v_3}=\left[\begin{array}{c}-1\\4\\2\\1\end{array}\right]$ Span $R^4$?\\
+Only 3 vecrors, need at least 4 vectors to span $R^4$ (Still it is not enough, in general)\\
+}\end{expl}
+Theorem: Let $A$ be an m row by n column matrix then the following statements are equivilent.\\
+a) For each $\vec{b}$ in $R^m$, the system $A\vec{x_1}=\vec{b}$ has a solution.\\
+b) The columns of $A$ span $R^m$.\\
+c) $A$ has a pivot position in every row.
 \end{document}
