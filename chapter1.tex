@@ -3,6 +3,7 @@
 \usepackage{setspace}
 \usepackage{multicol}
 \usepackage{amsthm}
+\usepackage{amssymb}
 \usepackage{tikz}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
@@ -236,4 +237,34 @@ Theorem: Let $A$ be an m row by n column matrix then the following statements ar
 a) For each $\vec{b}$ in $R^m$, the system $A\vec{x_1}=\vec{b}$ has a solution.\\
 b) The columns of $A$ span $R^m$.\\
 c) $A$ has a pivot position in every row.
+\section{Section 1.5}
+\section{Section 1.6}
+\section{Section 1.7}
+\section{Introduction to Linear Transformations}
+\begin{expl}\-\\
+\textup{
+$A = \left[\begin{array}{cc}1&0\\0&-1\end{array}\right]$\\
+$T(\vec{x})=A\vec{x}=\left[\begin{array}{cc}1&0\\0&-1\end{array}\right]\left[\begin{array}{c}x_1\\x_2\end{array}\right]=\left[\begin{array}{c}x_1\\-x_2\end{array}\right]$\\
+}\end{expl}
+\begin{defn}
+\textup{
+Transformation\\
+A transformation (or function or mapping) $T$ from $R^n to R^m$ is a rule that assigns to each vector $\vec{x}$ in $R^n$ a vector $T(\vec{x})$ in $R^m$.\\
+The set $R^n$ is called the \underline{Domain of $T$}\\
+The set $R^m$ is called the \underline{Co-Domain of $T$}\\
+$T(\vec{x})$ is called the \underline{image of $\vec{x}$} (under $T$)\\
+$\{T(\vec{x}),\vec{x}\in R^n\}$ is called the \underline{range of $T$} (the set of all images)\\
+}\end{defn}
+
+\begin{defn}
+\textup{
+Linear Transformation\\
+A transformation $T: R^n \rightarrow R^m$ is linear if:\\
+(i) $T(\vec{u}+\vec{v})=T(\vec{u})+T(\vec{v})$ for any $\vec{u},\vec{v}$ from the domain of $T$\\
+(ii) $T(c\vec{u})=cT(\vec{u})$ for any $\vec{u}$ and any scaler $c\in R$\\
+}\end{defn}
+\begin{expl} 
+\textup{
+.
+}\end{expl}
 \end{document}
