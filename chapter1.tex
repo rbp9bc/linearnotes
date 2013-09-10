@@ -1,4 +1,4 @@
-\documentclass[a4paper,12pt]{book}
+\documentclass[a4paper,12pt,openany]{book}
 \usepackage{fullpage}
 \usepackage{setspace}
 \usepackage{multicol}
@@ -6,6 +6,14 @@
 \usepackage{amssymb}
 \usepackage{tikz}
 \usepackage{mathtools}
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks,
+    citecolor=black,
+    filecolor=black,
+    linkcolor=black,
+    urlcolor=black
+}
 \newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
@@ -16,13 +24,10 @@
 \theoremstyle{expl}
 \newtheorem{expl}{Example}[section]
 
-\begin{document} 
-\tableofcontents
-
+\begin{document}
+\tableofcontents 
 \chapter{Linear Equations in Linear Algebra}
 \section{Systems of Linear Equations}
-
-
 
 \begin{defn}\textup{A Linear Equations is the variables $x_1,x_2...x_n$ is an equation that can be written in the form $a_1x_1+a_2x_2+...+a_nx_n = b$ where $a_1,a_2, ..., a_n$ are real coefficient and $b$ is a real number(and known)} \end{defn}
 \begin{defn}\textup{A System of Linear Equations
@@ -281,4 +286,5 @@ A transformation $T: R^n \rightarrow R^m$ is linear if:\\
 
 \section{Solution Sets of Linear Systems}
 \chapter{Matrix Algebra}
+\section{Matrix Operations}
 \end{document}
