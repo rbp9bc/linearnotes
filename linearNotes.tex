@@ -24,14 +24,18 @@
 \chapter{Linear Equations in Linear Algebra}
 \section{Systems of Linear Equations}
 
-\begin{defn}\textup{A Linear Equations is the variables $x_1,x_2...x_n$ is an equation that can be written in the form $a_1x_1+a_2x_2+...+a_nx_n = b$ where $a_1,a_2, ..., a_n$ are real coefficient and $b$ is a real number(and known)} \end{defn}
-\begin{defn}\textup{A System of Linear Equations
-$\left\{ \begin{array}{c}
-a_{11}x_1+a_{12}x_2+...+a_{1n}x_n = b_1\\
-a_{21}x_1+a_{22}x_2+...+a_{2n}x_n = b_2\\
-\vdots\\
-a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n = b_m
-\end{array} \right.$ m number of equations, n number of unknowns (standard form) (first index row number, second index col number)}\end{defn}
+\begin{defn}
+	\textup{A Linear Equations is the variables $x_1,x_2...x_n$ is an equation that can be written in the form $a_1x_1+a_2x_2+...+a_nx_n = b$ where $a_1,a_2, ..., a_n$ are real coefficient and $b$ is a real number(and known)}
+\end{defn}
+\begin{defn}
+	\textup{A System of Linear Equations
+	$\left\{\begin{array}{c}
+		a_{11}x_1+a_{12}x_2+...+a_{1n}x_n = b_1\\
+		a_{21}x_1+a_{22}x_2+...+a_{2n}x_n = b_2\\
+		\vdots\\
+		a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n = b_m
+	\end{array} \right.$
+	m number of equations, n number of unknowns (standard form) (first index row number, second index col number)}\end{defn}
 \begin{defn}\textup{A solution of the system is a list ($s_1,s_2,...,s_n$) of numbers that makes each equation a true statment when the values are substituted for $x_1,x_2,...,x_n$}\end{defn}
 \begin{defn}\textup{Solution Set is the set of all possible solutions}\end{defn}
 
@@ -50,7 +54,7 @@ x_1 - x_2 & = & 5 \\
 \left\{ \begin{array}{rcc}
 x_1 - x_2 & = & 5 \\
 x_2 & = & -1
-\end{array} \right.
+\end{array} \right.\\
 E_1+E_2
 \left\{ \begin{array}{rcc}
 x_1 & = & 4 \\
@@ -103,8 +107,44 @@ a_{21} & a_{22} & \ldots & a_{2n} & b_2\\
 \vdots &\vdots&\ddots& \vdots &\vdots\\
 a_{m1} & a_{m2} & \ldots & a_{mn} & b_m\\
 \end{array}\right]$ \end{defn}
-The basic strategy to solve a system of linear equations is to replace one system with an equivalent one (ie one with the same solution set, that is easier to solve)
-
+The basic strategy to solve a system of linear equations is to replace one system with an equivalent one (ie one with the same solution set, that is easier to solve)\\\-\\
+The basic operations to solve a system of linear equations (row operations)
+\begin{enumerate}
+\item Replacement: Replace one equation(row) by the sum of itself and a multiple of another equation(row)
+\item Interchange: Interchange two equations(rows)
+\item Scaling: Multiply all the terms in an equation(row) by a non zero constant
+\end{enumerate}
+\begin{expl}
+	\textup{Solve the system of eqations} $\left\{\begin{array}{rcc}x_1-2x_2+x_3&=&1\\-x_1+x_2-3x_3&=&4\end{array}\right.\\
+\left[\begin{array}{ccc|c}1&-2&1&1\\-1&1&-3&4\end{array}\right] R_2+R_1 \left[\begin{array}{ccc|c}1&-2&1&1\\0&-1&-2&5\end{array}\right] \bfrac{-R_2}{R_1+2R_2} \left[\begin{array}{ccc|c}1&0&5&-9\\0&1&2&-5\end{array}\right]
+\left\{\begin{array}{rcc}x_1&=&-5x_3-9\\x_2&=&-2x_3-5\\x_3&=&Parameter\end{array}\right.\\
+$\textup{Solution is not unique}\end{expl}
+\begin{defn}
+\textup{We say the two \underline{matricies are row equivalant} if there is a sequence of elementary row operations that transforms one matrix into the other $A\sim B$}\end{defn}
+Remark: If the augmented matrix of two linear systems are row equivalent, then the two systems have the same solution set.
+\begin{expl}
+\textup{Determine if the system $\left\{\begin{array}{rcc}x_1-2x_2+x_3&=&1\\2x_1+x_2-x_3&=&2\\-x_1-8x_2+5x_3&=&4\end{array} \right.$ is consistent}\\
+$\left[\begin{array}{ccc|c}
+1&-2&1&1\\
+2&1&-1&2\\
+-1&-8&5&4
+\end{array}\right]\bfrac{R_2-2R_1}{R_3+R_1}
+\left[\begin{array}{ccc|c}
+1&-2&1&1\\
+0&5&-3&0\\
+0&-10&6&5
+\end{array}\right]R_3+2R_2
+\left[\begin{array}{ccc|c}
+1&-2&1&1\\
+0&5&-3&0\\
+0&0&0&5
+\end{array}\right]\\
+\left\{\begin{array}{rcl}
+x_1-2x_2+x_3&=&1\\
+5x_2-3x_3&=&0\\
+0&=&5\rightarrow\textup{Contradiction}
+\end{array}\right.\textup{The system is inconsistnent}
+$\end{expl} 
 \section{Row Reduction and Echelon Forms}
 \begin{defn}\textup{A leading  of a row in a matrix is the left most non-zero entry} \end{defn}
 Example) $\left[ \begin{array}{cccccc} 0 & 0 & \circled{7} & 3 & 4 & 1\\ \circled{2} & 4 & 0 &0 &0 &0 \\ 0 &0 &0 &0 &\circled{-2} &0 \end{array} \right] $
