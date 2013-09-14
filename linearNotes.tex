@@ -17,7 +17,7 @@
 \newtheorem{expl}{Example}[section]
 \title{Math 208\\Linear Algebra\\Lecture Notes}
 \date{Fall Semester 2013}
-\author{Transcribed by R Barry Preston\\Based on Lecture by Dr.~Roman Dwilewicz}
+\author{Transcribed by R Barry Preston\\Based on Lecture by Dr.~Roman Dwilewicz\\Generated in \LaTeX{}}
 \begin{document}
 \maketitle
 \tableofcontents 
@@ -37,22 +37,58 @@ a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n = b_m
 
 Geometric Interpretations
 Example) Find the Solution set of the system \\
-(a) $\left\{ \begin{array}{rcl}
+(a) $\left\{ \begin{array}{rcc}
 x_1 - x_2 & = & 5 \\
 2x_1 + x_2 & = & 7
+\end{array} \right.
+E_2-2E_1
+\left\{ \begin{array}{rcc}
+x_1 - x_2 & = & 5 \\
+3x_2 & = & -3
+\end{array} \right.
+\frac{1}{3}E_2
+\left\{ \begin{array}{rcc}
+x_1 - x_2 & = & 5 \\
+x_2 & = & -1
+\end{array} \right.
+E_1+E_2
+\left\{ \begin{array}{rcc}
+x_1 & = & 4 \\
+x_2 & = & -1
 \end{array} \right.$\\
-(b) $\left\{ \begin{array}{rcl}
+(b) $\left\{ \begin{array}{rcc}
 x_1 - 2x_2&=& 4 \\
 -2x_1 + 4x_2 &=& -8
-\end{array} \right.$\\
-(c) $\left\{ \begin{array}{rcl}
+\end{array} \right.
+E_2+2E_1
+\left\{ \begin{array}{rcc}
+x_1 - 2x_2&=& 4 \\
+0&=&0
+\end{array} \right.
+~\left\{ \begin{array}{rcc}
+x_1&=&2x_2+4\\
+x_2&=&Parameter
+\end{array} \right.
+$\\
+(c) $\left\{ \begin{array}{rcc}
 x_1+3x_2&=&1\\
 2x_1+6x_2&=&5
-\end{array} \right.$
-
-
+\end{array} \right.
+E_2-2E_1
+\left\{ \begin{array}{rcc}
+x_1+3x_2&=&1\\
+0x_1+0x_2&=&3
+\end{array} \right.
+$~Contradiction $0\neq 3$ so the solution set is empty
 \begin{defn}\textup{A linear system is consistant if it has either one solution or infinitely many solutions}\end{defn}
-
+\begin{defn}\textup{Standard Form of a Sysyem}
+$\begin{array}{c}
+a_{11}x_1+a_{12}x_2+...+a_{1n}x_n = b_1\\
+a_{21}x_1+a_{22}x_2+...+a_{2n}x_n = b_2\\
+\vdots\\
+a_{m1}x_1+a_{m2}x_2+...+a_{mn}x_n = b_m
+\end{array}$
+\end{defn}
 \begin{defn}\textup{Matrix of Coefficients} 
 $\left[ \begin{array}{cccc}
 a_{11} & a_{12} & \ldots & a_{1n}\\
@@ -60,8 +96,6 @@ a_{21} & a_{22} & \ldots & a_{2n}\\
 \vdots &\vdots&\ddots& \vdots\\
 a_{m1} & a_{m2} & \ldots & a_{mn}\\
 \end{array} \right]$ \end{defn}
-
-
 \begin{defn}\textup{Augmented Matrix of the System}
 $\left[ \begin{array}{cccc|c}
 a_{11} & a_{12} & \ldots & a_{1n} & b_1\\
@@ -69,7 +103,7 @@ a_{21} & a_{22} & \ldots & a_{2n} & b_2\\
 \vdots &\vdots&\ddots& \vdots &\vdots\\
 a_{m1} & a_{m2} & \ldots & a_{mn} & b_m\\
 \end{array}\right]$ \end{defn}
-
+The basic strategy to solve a system of linear equations is to replace one system with an equivalent one (ie one with the same solution set, that is easier to solve)
 
 \section{Row Reduction and Echelon Forms}
 \begin{defn}\textup{A leading  of a row in a matrix is the left most non-zero entry} \end{defn}
@@ -188,7 +222,7 @@ x_3&=&Parameter
 \end{array}$\\
 Remember: Echelon Form of a matrix is not unique. Reduced Echelon Form IS unique.
 }\end{expl}
-\section{The Matrix Equation $A\vec{x}=\vec{b}$}
+\section[The Matrix Equation Ax=b]{The Matrix Equation $A\vec{x}=\vec{b}$}
 Standard Form: 
 $\begin{array}{ccccccccc}
 a_{11}x_1&+&a_{12}x_2&+&...&+&a_{1n}x_n &=&b_1\\
@@ -276,7 +310,17 @@ A transformation $T: R^n \rightarrow R^m$ is linear if:\\
 }\end{defn}
 \begin{expl} 
 \textup{
-.
+Example of Lienar Transformations\\
+Matrix Transformation: $A, m~x~n \\ T:R^n\rightarrow R^m, T(\vec{x})=A\vec{x}$\\
+(i)$T(\vec{u}+\vec{v})=A(\vec{u}+\vec{v})=A\vec{u}+A\vec{v}=T(\vec{u})+T(\vec{v})$\\
+(ii)$T(c\vec{u})=Ac\vec{u}=cA\vec{u}=cT(\vec{u})$\\
+For Linear Transformation if the two conditions from the definition of linear transformation are satisfied $\rightarrow A$ matrix transformations is a linear transformations
+}\end{expl}
+\begin{expl}
+\textup{
+Check if $T:R^2\rightarrow R^2\quad T\left(\left[\begin{array}{c}x_1\\x_2\end{array}\right]\right)=\left[\begin{array}{c}x_1+x_2\\x_2\end{array}\right]$ is a linear transformation.\\
+Two methods to prove the problme: (I) Check the conditions (i),(ii) directly, (II) Show that $T$ is a matrix transformation.\\((II) is easier)\\
+(II) $T\left(\left[\begin{array}{c}x_1\\x_2\end{array}\right]\right)=\left[\begin{array}{cc}1&1\\0&1\end{array}\right]\left[\begin{array}{c}x_1\\x_2\end{array}\right]=\left[\begin{array}{c}x_1+x_2\\x_2\end{array}\right]$\\
 }\end{expl}
 
 \section{Solution Sets of Linear Systems}
