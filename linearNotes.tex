@@ -353,15 +353,14 @@ Answer: One ($x_3$)\\
 $Q_2$: Is it true that $A\vec{x}=\vec{b}$ has a solution for any $\vec{b} \in R^4$?\\
 Answer: Only if there is a pivot position in each row. - So it's False.
 }\end{expl}
-\begin{expl}
-\textup{
+\begin{expl}\textup{
 Do the vectors $\vec{v_1}=\left[\begin{array}{c}1\\3\\4\\-1\end{array}\right] \vec{v_2}=\left[\begin{array}{c}0\\7\\5\\-1\end{array}\right] \vec{v_3}=\left[\begin{array}{c}-1\\4\\2\\1\end{array}\right]$ Span $R^4$?\\
-Only 3 vecrors, need at least 4 vectors to span $R^4$ (Still it is not enough, in general)\\
+Only 3 vecrors, need at least 4 vectors to span $R^4$ (Still it is not enough, in general)
 }\end{expl}
-Theorem: Let $A$ be an m row by n column matrix then the following statements are equivilent.\\
+\begin{defn}\textup{Theorem: Let $A$ be an m row by n column matrix then the following statements are equivilent.\\
 a) For each $\vec{b}$ in $R^m$, the system $A\vec{x_1}=\vec{b}$ has a solution.\\
 b) The columns of $A$ span $R^m$.\\
-c) $A$ has a pivot position in every row.
+c) $A$ has a pivot position in every row.}\end{defn}
 \begin{expl}
 \textup{
 Do the columns of $A=\left[\begin{array}{cccc}1&-1&5&0\\2&0&4&2\\4&1&5&5\end{array}\right]$ span $R^3$?\\
@@ -369,7 +368,11 @@ $A\quad\widetilde{\bfrac{R_2-2R_1}{R_3-4R_1}}\quad\left[\begin{array}{cccc}1&-1&
 \widetilde{R_3-\frac{5}{2}R_2}\left[\begin{array}{cccc}\circled{1}&-1&5&0\\0&\circled{2}&-6&2\\0&0&0&0\end{array}\right]$\\
 NO, the columns of $A$ do NOT span $R^3$ because all the vectors lie in a plane(no z component)
 }\end{expl}
-Notation of Matricies
+\begin{defn}\textup{
+Notation of Matrices\\
+Identity Matrix(Square): $I_n = \left[\begin{array}{cccc}1&0&...&0\\0&1&...&0\\\vdots&\vdots&\ddots&\vdots\\0&0&...&1\end{array}\right],I_1 = \left[\begin{array}{c}1\end{array}\right], I_2 = \left[\begin{array}{cc}1&0\\0&1\end{array}\right]$\\
+Zero Matrix(Rectangle): $0 = \left[\begin{array}{ccc}0&...&0\\\vdots&\ddots&\vdots\\0&...&0\end{array}\right]$
+}\end{defn}
 \section{Solution Sets of Linear Systems}
 \section{Applications of Linear Systems}
 \section{Linear Independence}
