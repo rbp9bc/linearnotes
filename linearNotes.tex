@@ -149,12 +149,61 @@ $\end{expl}
 \begin{defn}\textup{A leading  of a row in a matrix is the left most non-zero entry} \end{defn}
 Example) $\left[ \begin{array}{cccccc} 0 & 0 & \circled{7} & 3 & 4 & 1\\ \circled{2} & 4 & 0 &0 &0 &0 \\ 0 &0 &0 &0 &\circled{-2} &0 \end{array} \right] $
 
-\begin{defn}\textup{A rectangular matrix is in echelon form if it has the following three properties:
+\begin{defn}\textup{A rectangular matrix is in \underline{echelon form} if it has the following three properties:
 \begin{enumerate}
 \item All non-zero rows are above any zero rows.
 \item Each leading entry of a row is in a column to the right of the leading entry above it.
 \item All entries in a column below a leading entry are zero.
 \end{enumerate}} \end{defn}
+\begin{defn}\textup{
+	A matrix is in \underline{reduced echelon form} if it is in echelon form and addionally
+	\begin{enumerate}
+		\setcounter{enumi}{3}
+		\item The leading entry in each non-zero row is 1
+		\item Each leading 1 is the only non-zero entry in its column
+	\end{enumerate}
+}\end{defn}
+\begin{expl}\textup{
+$\blacksquare =$ non-zero, $* =$ any number\\
+Echelon: $\left[\begin{array}{ccccc}
+0&\blacksquare&*&*&*\\
+0&0&0&\blacksquare&*\\
+0&0&0&0&\blacksquare\\
+0&0&0&0&0
+\end{array}\right]$
+Reduced Echelon: $\left[\begin{array}{ccccc}
+0&1&*&0&0\\
+0&0&0&1&0\\
+0&0&0&0&1\\
+0&0&0&0&0
+\end{array}\right]$
+}\end{expl}
+\begin{expl}\textup{
+Determine which matricies are in reduced echelon, echelon or neither\\
+$\left[\begin{array}{cccc}
+\circled{1}&1&1&0\\
+0&0&0&\circled{1}\\
+0&0&0&0
+\end{array}\right]\rightarrow \textup{Reduced Echelon Form}\\
+\left[\begin{array}{cccc}
+\circled{1}&0&1&0\\
+0&0&\circled{1}&0\\
+0&0&0&\circled{1}
+\end{array}\right]\rightarrow \textup{Echelon Form}\\
+\left[\begin{array}{ccc}
+\circled{1}&0&1\\
+0&0&\circled{1}\\
+0&\circled{1}&0
+\end{array}\right]\rightarrow \textup{Neither}
+$}\end{expl}
+\begin{defn}\textup{\-\\
+	A \underline{pivot position} in a matrix $A$ is a location in $A$ that corresponds to a leading entry in an echelon form of $A$\\
+	A \underline{pivot column} is a column of $A$ that contains a pivot position  
+}\end{defn}
+\begin{expl}\textup{
+Find the pivot positions in $A = \left[\begin{array}{cccc}0&0&2&3\\0&1&-1&-2\\0&1&1&1\end{array}\right]\\
+\left[\begin{array}{cccc}0&0&2&3\\0&1&-1&-2\\0&1&1&1\end{array}\right] \bfrac{R_1\Leftrightarrow R_2}{R_2\Leftrightarrow R_3}\left[\begin{array}{cccc}0&1&-1&-2\\0&1&1&1\\0&0&2&3\end{array}\right]R_2-R_1\left[\begin{array}{cccc}0&1&-1&-2\\0&0&2&3\\0&0&2&3\end{array}\right]\\R_3-R_2\left[\begin{array}{cccc}0&\circled{1}&-1&-2\\0&0&\circled{2}&3\\0&0&0&0\end{array}\right]\quad A = \left[\begin{array}{cccc}0&\circled{0}&2&3\\0&1&\circled{-1}&-2\\0&1&1&1\end{array}\right]
+$}\end{expl}
 
 \section{Vector Equations}
 \begin{defn}
