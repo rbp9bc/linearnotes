@@ -7,6 +7,7 @@
 \usepackage{mathtools}
 \usepackage{hyperref}
 \usepackage{multicol}
+\usepackage{xcolor}
 \newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
@@ -497,7 +498,7 @@ A^k = \left[\begin{array}{cc}0&0\\0&0\end{array}\right] (k \geq 2) \quad A^{179}
 Let $A$ be a $m\times n$ matrix. The transpose of $A$ is $m\times n$ matrix denoted by $A^T$, whoes columns are formed from the corisponding rows of $A$\\}
 \end{defn}
 \begin{expl}
-$A=\left[\begin{array}{ccc}1&2&5\\4&3&7\end{array}\right], A^T=\left[\begin{array}{cc}1&4\\2&3\\5&7\end{array}\right]$
+$A=\left[\begin{array}{ccc} \color{red}1&\color{red}2&\color{red}5\\\color{blue}4&\color{blue}3&\color{blue}7\end{array}\right], A^T=\left[\begin{array}{cc}\color{red}1&\color{blue}4\\\color{red}2&\color{blue}3\\\color{red}5&\color{blue}7\end{array}\right]$
 \end{expl}
 \begin{expl}\textup{Compute the transpose of the matricies\\}
 $A=\left[\begin{array}{cc}a&b\\c&d\end{array}\right]\quad A^T = \left[\begin{array}{cc}a&c\\b&d\end{array}\right]\\
