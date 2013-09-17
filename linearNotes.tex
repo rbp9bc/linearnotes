@@ -6,11 +6,11 @@
 \usepackage{tikz}
 \usepackage{mathtools}
 \usepackage{hyperref}
+\usepackage{multicol}
 \newcommand*{\bfrac}[2]{\genfrac{}{}{0pt}{}{#1}{#2}}
 \newcommand*\circled[1]{\tikz[baseline=(char.base)]{
             \node[shape=circle,draw,inner sep=2pt] (char) {#1};}}
 \pagestyle{empty}
-
 \theoremstyle{defn}
 \newtheorem{defn}{Definition}[section]
 \theoremstyle{expl}
@@ -374,6 +374,11 @@ Identity Matrix(Square): $I_n = \left[\begin{array}{cccc}1&0&...&0\\0&1&...&0\\\
 Zero Matrix(Rectangle): $0 = \left[\begin{array}{ccc}0&...&0\\\vdots&\ddots&\vdots\\0&...&0\end{array}\right]$
 }\end{defn}
 \section{Solution Sets of Linear Systems}
+$A\vec{x}=\vec{b}, A=m\times n, \vec{x} = n\times 1, \vec{b} = m\times 1\\
+1^{\textup{st}} \textup{Case}: \vec{b}=\vec{0}, A\vec{x}=\vec{0}, \textup{Homogeneous System}\\
+\textup{Homogeneous system is always consistant}\\
+2^{\textup{nd}} \textup{Case}: \vec{b}\neq\vec{0}, A\vec{x}=\vec{b}, \textup{Nonhomogeneous System}\\
+\textup{Nonhomogeneous system can be either consistant or inconsistant}$
 \section{Applications of Linear Systems}
 \section{Linear Independence}
 \section{Introduction to Linear Transformations}
@@ -418,4 +423,58 @@ Two methods to prove the problme: (I) Check the conditions (i),(ii) directly, (I
 \section{Solution Sets of Linear Systems}
 \chapter{Matrix Algebra}
 \section{Matrix Operations}
+$A = \left[\begin{array}{ccccc}
+a_{11}&...&a_{1j}&...&a_{1n}\\
+\vdots&\vdots&\vdots&\vdots&\vdots\\
+a_{i1}&...&a_{ij}&...&a_{in}\\
+\vdots&\vdots&\vdots&\vdots&\vdots\\
+a_{m1}&...&a_{mj}&...&a_{mn}
+\end{array}\right]
+\textup{Diagonal Matrix} = \left[\begin{array}{cccc}
+a_{11}&0&...&0\\
+0&a_{22}&...&0\\
+\vdots&\vdots&\ddots&\vdots\\
+0&0&...&a_{nn}
+\end{array}\right]\\
+\textup{Identity Matrix(Square):} I_n = \left[\begin{array}{cccc}1&0&...&0\\0&1&...&0\\\vdots&\vdots&\ddots&\vdots\\0&0&...&1\end{array}\right] \textup{Zero Matrix(Rectangle):} 0 = \left[\begin{array}{ccc}0&...&0\\\vdots&\ddots&\vdots\\0&...&0\end{array}\right]$\\
+Basic Operations:\\
+Addition(+) Subtraction(-) Matrices should be the same size\\
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A+B=B+A$
+\item $(A+B)+C=A+(B+C)$
+\item $A+0=A$
+\item $r(A+B)=rA+rB$
+\item $(r+s)A=rA+sA$
+\item $(rs)A=r(sA)$
+\end{enumerate}
+\end{multicols}
+\noindent Matrix Multiplication\\
+$A_{m\times n} \times B_{n\times p} = AB_{m\times p}$ order of multiplication IS important ($AB \neq BA$).\\
+$\left[\begin{array}{cccc}&&&\\r&o&w&i\\&&&\end{array}\right]\left[\begin{array}{ccc}&c&\\&o&\\&l&\\&j&\end{array}\right]=\left[\begin{array}{ccc}&&\\&c_{ij}&\\&&\end{array}\right]$\\
+\begin{expl}
+\textup{Compute AB where $A = \left[\begin{array}{cc}3&2\\0&1\\1&-2\end{array}\right], B = \left[\begin{array}{cc}2&-1\\0&5\end{array}\right]$}\\
+$AB=\left[\begin{array}{cc}3&2\\0&1\\1&-2\end{array}\right]\left[\begin{array}{cc}2&-1\\0&5\end{array}\right]=\left[\begin{array}{cc}6&7\\0&4\\2&-11\end{array}\right]$
+\end{expl}
+\begin{expl}
+\textup{Find the entries in the $2^{\textup{nd}}$ column in $AB$ where\\ $A=\left[\begin{array}{ccc}1&2&-1\\2&0&1\\0&1&3\end{array}\right],B=\left[\begin{array}{cccc}4&1&0&-1\\2&0&1&-2\\5&1&0&4\end{array}\right]$}\\
+$\left[\begin{array}{ccc}1&2&-1\\2&0&1\\0&1&3\end{array}\right]\left[\begin{array}{cccc}4&1&0&-1\\2&0&1&-2\\5&1&0&4\end{array}\right]=\left[\begin{array}{cccc}x&0&x&x\\x&3&x&x\\x&3&x&x\end{array}\right]$
+\end{expl}
+\noindent Properties of Matrix Multiplication\\
+Let $A$ be $m\times n$ and let $B$ and $C$ have sizes for which the operations are defined.
+\begin{multicols}{2}
+\begin{enumerate}
+\item $A(BC)=(AB)C$
+\item $A(B+C)=AB+AC$
+\item $(B+C)A=BA+CA$
+\item $r(AB)=(rA)B=A(rB)$
+\item $I_mA=A=AI_n$
+\end{enumerate}
+\end{multicols}
+\noindent WARNING!
+\begin{enumerate}
+\item In general $AB\neq BA$ (if $AB=BA$, we say the matrices commute)
+\item The cancellation laws do not hold, in general $AB=AC \nRightarrow B=C$ (in general)
+\item If $AB=0$, then in general neither $A=0$ or $B=0$
+\end{enumerate}
 \end{document}
