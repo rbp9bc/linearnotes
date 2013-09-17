@@ -477,4 +477,41 @@ Let $A$ be $m\times n$ and let $B$ and $C$ have sizes for which the operations a
 \item The cancellation laws do not hold, in general $AB=AC \nRightarrow B=C$ (in general)
 \item If $AB=0$, then in general neither $A=0$ or $B=0$
 \end{enumerate}
+\begin{expl}\textup{Compute $AB$ and $BA$ where $A=\left[\begin{array}{cc}1&-1\\-1&1\end{array}\right],B=\left[\begin{array}{cc}2&4\\2&4\end{array}\right]$}\\
+$AB = \left[\begin{array}{cc}1&-1\\-1&1\end{array}\right]\left[\begin{array}{cc}2&4\\2&4\end{array}\right] = \left[\begin{array}{cc}(1*2)+(-1*2)&(-1*4)+(1*4)\\(-1*2)+(1*2)&(-1*4)+(1*4)\end{array}\right]=\left[\begin{array}{cc}0&0\\0&0\end{array}\right]\\
+BA = \left[\begin{array}{cc}2&4\\2&4\end{array}\right]\left[\begin{array}{cc}1&-1\\-1&1\end{array}\right] = \left[\begin{array}{cc}(2*1)+(4*-1)&(2*-1)+(4*1)\\(2*1)+(4*-1)&(2*-1)+(4*1)\end{array}\right]=\left[\begin{array}{cc}-2&2\\-2&2\end{array}\right]\\
+AB=\left[\begin{array}{cc}0&0\\0&0\end{array}\right]\neq \left[\begin{array}{cc}-2&2\\-2&2\end{array}\right]=BA$\\
+Note: if $AB=BA$, we can say that $A$ and $B$ commute with one another.
+\end{expl}
+\begin{defn}\textup{Powers of a Matrix\\
+$A, n\times n$ matrix\\}
+$A^2 = AA\quad A^3 = AAA\quad A^k=AAA...A (k \textup{times})(k=1,2,3...)\\
+A^0=I$
+\end{defn}
+\begin{expl}\textup{Computer $A^{179}$ if $A=\left[\begin{array}{cc}0&0\\1&0\end{array}\right]$\\}
+$A^2=\left[\begin{array}{cc}0&0\\1&0\end{array}\right]\left[\begin{array}{cc}0&0\\1&0\end{array}\right]=\left[\begin{array}{cc}0&0\\0&0\end{array}\right]\\
+A^3=\left[\begin{array}{cc}0&0\\1&0\end{array}\right]\left[\begin{array}{cc}0&0\\1&0\end{array}\right]\left[\begin{array}{cc}0&0\\1&0\end{array}\right]=\left[\begin{array}{cc}0&0\\0&0\end{array}\right]\left[\begin{array}{cc}0&0\\1&0\end{array}\right]=\left[\begin{array}{cc}0&0\\0&0\end{array}\right]\\
+A^k = \left[\begin{array}{cc}0&0\\0&0\end{array}\right] (k \geq 2) \quad A^{179}=\left[\begin{array}{cc}0&0\\0&0\end{array}\right]=0$
+\end{expl}
+\begin{defn}\textup{Transpose of a matrix\\
+Let $A$ be a $m\times n$ matrix. The transpose of $A$ is $m\times n$ matrix denoted by $A^T$, whoes columns are formed from the corisponding rows of $A$\\}
+\end{defn}
+\begin{expl}
+$A=\left[\begin{array}{ccc}1&2&5\\4&3&7\end{array}\right], A^T=\left[\begin{array}{cc}1&4\\2&3\\5&7\end{array}\right]$
+\end{expl}
+\begin{expl}\textup{Compute the transpose of the matricies\\}
+$A=\left[\begin{array}{cc}a&b\\c&d\end{array}\right]\quad A^T = \left[\begin{array}{cc}a&c\\b&d\end{array}\right]\\
+B=\left[\begin{array}{cc}5&8\\3&9\\1&0\end{array}\right]  \quad B^T=\left[\begin{array}{ccc}5&3&1\\8&9&0\end{array}\right] \\
+C=\left[\begin{array}{crccc}1&-2&4&-7&9\\0&1&2&-5&3\end{array}\right]  \quad C^T=\left[\begin{array}{rr}1&0\\-2&1\\4&2\\-7&-5\\9&3\end{array}\right]$
+\end{expl}
+\noindent Properties of Transpose
+\begin{multicols}{2}
+\begin{enumerate}
+\item $(A^T)^T=A$
+\item $(A+B)^T=A^T=B^T$
+\item $(r^A)^T=rA^T$
+\item $(AB)^T=B^TA^T$
+\end{enumerate}
+\end{multicols}
+\section{The Inverse of a Matrix}
 \end{document}
