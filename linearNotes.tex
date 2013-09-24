@@ -374,14 +374,34 @@ Notation of Matrices\\
 Identity Matrix(Square): $I_n = \left[\begin{array}{cccc}1&0&...&0\\0&1&...&0\\\vdots&\vdots&\ddots&\vdots\\0&0&...&1\end{array}\right],I_1 = \left[\begin{array}{c}1\end{array}\right], I_2 = \left[\begin{array}{cc}1&0\\0&1\end{array}\right]$\\
 Zero Matrix(Rectangle): $0 = \left[\begin{array}{ccc}0&...&0\\\vdots&\ddots&\vdots\\0&...&0\end{array}\right]$
 }\end{defn}
+\noindent$A(\vec{u}+\vec{v})=A\vec{u}+A\vec{v}\qquad A(c\vec{u})=cA\vec{u}$
+%Section 1.5
 \section{Solution Sets of Linear Systems}
 $A\vec{x}=\vec{b}, A=m\times n, \vec{x} = n\times 1, \vec{b} = m\times 1\\
 1^{\textup{st}} \textup{Case}: \vec{b}=\vec{0}, A\vec{x}=\vec{0}, \textup{Homogeneous System}\\
 \textup{Homogeneous system is always consistant}\\
 2^{\textup{nd}} \textup{Case}: \vec{b}\neq\vec{0}, A\vec{x}=\vec{b}, \textup{Nonhomogeneous System}\\
 \textup{Nonhomogeneous system can be either consistant or inconsistant}$
+\begin{expl}\textup{Solve the system}$\left\{\begin{array}{ccc}x_1-3x_2+2x_3&=&0\\2x_1+0x_2-3x_3&=&0\\-4x_1-6x_2+13x_3&=&0\end{array}\right.\\
+\left[\begin{array}{rrr|c}
+1&-3&-2&0\\
+2&0&-3&0\\
+-4&-6&13&0
+\end{array}\right]\leadsto
+\left[\begin{array}{ccr|c}
+\circled{\textup{1}}&0&\frac{-9}{6}&0\\
+0&\circled{\textup{1}}&\frac{-7}{6}&0\\
+0&0&0&0
+\end{array}\right]\leadsto
+\left\{\begin{array}{ccc}x_1&=&\frac{3}{2}x_3\\x_2&=&\frac{7}{6}x_3\\x_3&=&Parameter\end{array}\right.$
+Three ways to display answer\\
+$\left[\begin{array}{c}1\end{array}\right]$ %stopped here
+\end{expl}
+%Section 1.6
 \section{Applications of Linear Systems}
+%Section 1.7
 \section{Linear Independence}
+%Section 1.8
 \section{Introduction to Linear Transformations}
 \begin{expl}\-\\
 \textup{
@@ -398,7 +418,6 @@ $T(\vec{x})$ is called the \underline{image of $\vec{x}$} (under $T$)\\
 $\{T(\vec{x}),\vec{x}\in R^n\}$ is called the \underline{range of $T$} (the set of all images)\\
 }
 \end{defn}
-
 \begin{defn}
 \textup{
 Linear Transformation\\
@@ -420,9 +439,10 @@ Check if $T:R^2\rightarrow R^2\quad T\left(\left[\begin{array}{c}x_1\\x_2\end{ar
 Two methods to prove the problme: (I) Check the conditions (i),(ii) directly, (II) Show that $T$ is a matrix transformation.\\((II) is easier)\\
 (II) $T\left(\left[\begin{array}{c}x_1\\x_2\end{array}\right]\right)=\left[\begin{array}{cc}1&1\\0&1\end{array}\right]\left[\begin{array}{c}x_1\\x_2\end{array}\right]=\left[\begin{array}{c}x_1+x_2\\x_2\end{array}\right]$\\
 }\end{expl}
-
+%Section 1.9
 \section{Solution Sets of Linear Systems}
 \chapter{Matrix Algebra}
+%Section 2.1
 \section{Matrix Operations}
 $A = \left[\begin{array}{ccccc}
 a_{11}&...&a_{1j}&...&a_{1n}\\
@@ -514,6 +534,7 @@ C=\left[\begin{array}{crccc}1&-2&4&-7&9\\0&1&2&-5&3\end{array}\right]  \quad C^T
 \item $(AB)^T=B^TA^T$
 \end{enumerate}
 \end{multicols}
+%Section 2.2
 \section{The Inverse of a Matrix}
 \begin{defn}
 \textup{If $A$ is an $n\times n$ matrix, if there is another $n\times n$ matrix $C$ such that $AC=I=CA$. In this case we say that $A$ is \underline{invertible} and we call $C$ an inverse of the matrix, $A$. The inverse matrix is unique and is denoted by $A^{-1}.~ AA^{-1}=I=A^{-1}A$}
@@ -551,5 +572,82 @@ $A,B$ invertible
 \item $(A^T)^{-1}=(A^{-1})^T$
 \end{enumerate}
 \end{multicols}
+\noindent How to find the inverse of a $n\times n$ matrix where $n\geq 3$\\
+\begin{expl}\textup{Find the inverse of the matrix $A=\left[\begin{array}{ccc}3&1&-1\\0&2&4\\1&1&-2\end{array}\right]$}\\
+$A=\left[\begin{array}{ccc|ccc}3&1&-1&1&0&0\\0&2&4&0&1&0\\1&1&-2&0&0&1\end{array}\right]R_1\leftrightarrow 
+R_3\left[\begin{array}{ccc|ccc}1&1&-2&0&0&1\\0&2&4&0&1&0\\3&1&-1&1&0&0\end{array}\right]\bfrac{R_3-3R_1}{\frac{R_2}{2}}\left[\begin{array}{ccc|ccc}1&1&-2&0&0&1\\0&1&2&0&\frac{1}{2}&0\\0&-2&5&1&0&-3\end{array}\right]\\
+\bfrac{R_3+2R_2}{R_1-R_2}\left[\begin{array}{ccc|ccc}1&0&-4&0&-\frac{1}{2}&1\\0&1&2&0&\frac{1}{2}&0\\0&0&9&1&1&-3\end{array}\right]\frac{R_3}{9}
+\left[\begin{array}{ccc|ccc}1&0&-4&0&-\frac{1}{2}&1\\0&1&2&0&\frac{1}{2}&0\\0&0&1&\frac{1}{9}&\frac{1}{9}&-\frac{3}{9}\end{array}\right]\bfrac{R_1+4R_3}{R_2-2R_3}\\
+\left[\begin{array}{ccc|rrr}1&0&0&\frac{4}{9}&-\frac{1}{18}&-\frac{3}{9}\\0&1&0&-\frac{2}{9}&\frac{5}{18}&\frac{6}{9}\\0&0&1&\frac{1}{9}&\frac{1}{9}&-\frac{3}{9}\end{array}\right]$
+\end{expl}
+\begin{expl}
+\textup{Find the inverse of $A=\left[\begin{array}{ccc}2&3&1\\1&-2&4\\7&0&14\end{array}\right]$ if it exists.\\}
+$\left[\begin{array}{ccc|ccc}2&3&1&1&0&0\\1&-2&4&0&1&0\\7&0&14&0&0&1\end{array}\right]R_1\leftrightarrow R_2\left[\begin{array}{ccc|ccc}1&-2&4&0&1&0\\2&3&1&1&0&0\\7&0&14&0&0&1\end{array}\right]\bfrac{R_2-2R_1}{R_3-7R_1}\left[\begin{array}{ccc|ccc}1&-2&4&0&1&0\\0&7&-7&1&-2&0\\0&-14&-14&0&-7&1\end{array}\right]R_3-3R_2\left[\begin{array}{ccc|ccc}1&-2&4&0&1&0\\0&7&-7&1&-2&0\\0&0&0&-2&3&1\end{array}\right]\\$
+\textup{$A$ is NOT invertable}
+\end{expl}
+\begin{expl}
+\textup{Suppose that $AB=AC$ where $B$ and $C$ are $n\times n$ matrices and $A$ is invertable. Show that $B=C$}\\
+$\begin{array}{ccc}
+A^{-1}(AB)&=&A^{-1}(AC)\\
+(A^{-1}A)B&=&(A^{-1}A)C\\
+IB&=&IC\\
+B&=&C
+\end{array}$
+\end{expl}
+\begin{expl}
+\textup{Suppose that $A,B,$ and $C$ are invertable $n\times n$ matrices. Show that $ABC$ is also invertable.}\\
+$(ABC)^{-1}=C^{-1}B^{-1}A^{-1}=D$ \textup{Show that $(ABC)D=D(ABC)=I$}\\
+$\begin{array}{ccc}
+(ABC)D&=&D(ABC)\\
+(ABC)(C^{-1}B^{-1}A^{-1})&=&(C^{-1}B^{-1}A^{-1})ABC\\
+AB(CC^{-1})B^{-1}A^{-1}&=&C^{-1}B^{-1}(A^{-1}A)BC\\
+ABIB^{-1}A^{-1}&=&C^{-1}B^{-1}IBC\\
+A(BB^{-1})A^{-1}&=&C^{-1}(B^{-1}B)C\\
+AIA&=&AIA\\
+AA^{-1}&=&A^{-1}A\\
+I&=&I
+\end{array}$
+\end{expl}
+%Section 2.3
 \section{Characterizations of Invertible Matrices}
+\noindent Now we formulate a very useful theorem that relates many concepts about solutions of systems of equatiosn, matrices, independence of vectors.\\
+Theorm The invertable Matrix Theorm:\\
+Let $A$ be a square $n\times n$ matrix. Then the following are equivalent.\\
+\begin{enumerate}
+\item $A$ is invertable matrix.
+\item $A$ is row equivalent to the $n\times n$ identiy matrix.
+\item $A$ has $n$ pivot positions.
+\item The equation $A\vec{x}=\vec{0}$ has only the trivial solution.
+\item The columns of $A$ form a linearly indepdent set.
+\item the linear transformation $\vec{x}\rightarrow A\vec{x}$ is one-to-one.
+\item The equation $A\vec{x}=\vec{b}$ has at least one solution for each $\vec{b}\in R^n$.
+\item The columns of $A$ span $R^n$
+\item The linear transformation $\vec{x}\rightarrow A\vec{x}$ maps $R^n$ onto $R^n$.
+\item There is an $n\times n$ matrix $C$ such that $CA=I$.
+\item There is an $n\times n$ matrix $D$ such that $AD=I$.
+\item $A^T$ is an invertable matrix.
+\end{enumerate}
+\begin{expl}\textup{Determine which of the matrices are invertable.\\}
+\begin{enumerate}
+\item $A=\left[\begin{array}{cc}6&-12\\-2&4\end{array}\right] (6*6)-(-12*-2)=24-24=0\quad A$ is singular, it is NOT invertable.
+\item $A=\left[\begin{array}{cccc}1&3&0&-1\\0&1&-2&-1\\-2&-6&3&2\\3&5&8&-3\end{array}\right]$RowOperations$\left[\begin{array}{cccc}1&3&0&-1\\0&1&-2&-1\\0&0&3&0\\0&0&0&-4\end{array}\right]\quad A$ is invertable.
+\end{enumerate}
+\end{expl}
+\begin{defn}\textup{Invertable Linear Transformations\\
+Let $T:R^n\rightarrow R^m$ is invertable if there exists $S:R^n\rightarrow R^m$ such that $\begin{array}{c}S(T(\vec{x}))=\vec{x}\\T(S(\vec{x}))=\vec{x}\end{array}$ for all $\vec{x}\in R^n$ then we call $S$ the inverse of $T$ and write it as $T^{-1}$\\
+Property: if $T(\vec{x})=A\vec{x}$, then $T^{-1}=A^{-1}\vec{x}$  
+}\end{defn}
+\begin{expl}\textup{Let $T$ be a linear transformation that maps $R^n$ onto $R^n$. Show that $T$ is invertable.\\
+$T(\vec{x})=A\vec{x}, A$ is $n\times n$ matrix.\\
+Because we know the linear transformation is onto (IMT 9) we also know that the matrix $A$ is invertable (IMT 1).\\Because $A$ in vertable we know that $T$ can be inverted as well. $T^{-1}(\vec{x})=A^{-1}\vec{x}$}
+\end{expl}
+\begin{expl}\textup{Explain why $A^2$ is invertable whenever $A$ is invertable.}\\
+$A^2=AA\\
+(A^2)^{-1}=(AA)^{-1}=A^{-1}A^{-1}\\
+(A^2)(A^{-1}A^{-1})=A(AA^{-1})A^{-1}\\
+AIA^{-1}\\
+AA^{-1}\\
+I$ 
+\textup{therefore $A^2$ is invertable.}
+\end{expl}
 \end{document}
