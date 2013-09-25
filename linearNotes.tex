@@ -650,4 +650,27 @@ AA^{-1}\\
 I$ 
 \textup{therefore $A^2$ is invertable.}
 \end{expl}
+\begin{expl}\textup{Let $T(\vec{x_1},\vec{x_2})=(-5x_1+9x_2, 4x_1-7x_2)$ show that $T$ is invertable and find a fomula for $T^{-1}$.}\\
+$T\left(\left[\begin{array}{c}x_1\\x_2\end{array}\right]\right)=\left[\begin{array}{rr}-5&9\\4&-7\end{array}\right]\left[\begin{array}{c}x_1\\x_2\end{array}\right]\\
+A=\left[\begin{array}{rr}-5&9\\4&-7\end{array}\right]\quad A^{-1}=-\left[\begin{array}{rr}-7&-9\\-4&-5\end{array}\right]=\left[\begin{array}{rr}7&9\\4&5\end{array}\right]\\
+T^{-1}\left(\left[\begin{array}{c}x_1\\x_2\end{array}\right]\right)=\left[\begin{array}{rr}7&9\\4&5\end{array}\right]\left[\begin{array}{c}x_1\\x_2\end{array}\right]$
+\end{expl}
+%Section 2.5
+\addtocounter{section}{1}
+\section{Matrix Factorization}
+\noindent Consider the system of equations $A\vec{x}=\vec{b}, A$ is $m\times n$. If $A$ is a square $n\times n$ matrix and invertible then $\vec{x}=A^{-1}\vec{b}$. To compose $A^{-1}$ requires many operations especially if $n$ is large. There are other methods which allow to solve the system and which use a smaller number of operations.\\
+Assumptions: $A$ is $m\times n$ and can be reduced to echelon form \underline{without} row operations.\\
+Under such assumption, $A$ can be written as $A=LU$, where $L$ is $m\times m$ lower triangular matrix with $1$'s on the diagonal. $U$ is $m\times n$ echelon form of $A$.\\
+$A=\left[\begin{array}{ccccc}
+1&0&0&...&0\\
+*&1&0&...&0\\
+*&*&1&...&0\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+*&*&*&...&1\end{array}\right]\left[\begin{array}{ccccc}
+\blacksquare&*&*&...&*\\
+0&\blacksquare&*&...&*\\
+0&0&\blacksquare&...&*\\
+\vdots&\vdots&\vdots&\ddots&\vdots\\
+0&0&0&...&\blacksquare
+\end{array}\right]$
 \end{document}
